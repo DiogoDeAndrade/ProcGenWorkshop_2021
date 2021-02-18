@@ -11,14 +11,18 @@ public class Checkerboard_Shader : TextureShader
 
     protected override Color GetColor(int x, int y)
     {
-        int sizeX = width / gridSize;
-        int sizeY = height / gridSize;
+        float cellWidth = width / gridSize;
+        float cellHeight = height / gridSize;
 
-        int condition = (((x / sizeX) + (y / sizeY)) % 2);
+        float cellX = Mathf.FloorToInt(x / cellWidth);
+        float cellY = Mathf.FloorToInt(y / cellHeight);
 
-        if (condition == 0)
-            return color1;
+        if (Mathf.RoundToInt(cellX + cellY) % 2 == 0) return color1;
+        else return color2;
+    }
 
-        return color2;
+    void Update()
+    {
+        UpdateTexture();
     }
 }

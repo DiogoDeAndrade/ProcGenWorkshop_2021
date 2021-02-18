@@ -11,7 +11,7 @@ public class RandomGen1 : MonoBehaviour
         Random.InitState(seed);
         for (int i = 0; i < 10; i++)
         {
-            int r = Random.Range(0, 100);
+            int r = UnityEngine.Random.Range(0, 100);
             Debug.Log(r);
         }
     }
