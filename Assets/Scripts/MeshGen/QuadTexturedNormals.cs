@@ -15,25 +15,46 @@ public class QuadTexturedNormals : BaseMeshGenerator
 
         positions.Add(new Vector3(-1, -1, 0));
         positions.Add(new Vector3(-1,  1, 0));
+        positions.Add(new Vector3( 0, 1, 0));
+        positions.Add(new Vector3( 0, -1, 0));
+        positions.Add(new Vector3( 0, 1, 0));
+        positions.Add(new Vector3( 0, -1, 0));
         positions.Add(new Vector3( 1,  1, 0));
         positions.Add(new Vector3( 1, -1, 0));
 
-        normals.Add(new Vector3(0, 0, -1));
-        normals.Add(new Vector3(0, 0, -1));
-        normals.Add(new Vector3(0, 0, -1));
-        normals.Add(new Vector3(0, 0, -1));
+        normals.Add(new Vector3(-1, 0, -1).normalized);
+        normals.Add(new Vector3(-1, 0, -1).normalized);
+        normals.Add(new Vector3(-1, 0, -1).normalized);
+        normals.Add(new Vector3(-1, 0, -1).normalized);
+        normals.Add(new Vector3(1, 0, -1).normalized);
+        normals.Add(new Vector3(1, 0, -1).normalized);
+        normals.Add(new Vector3(1, 0, -1).normalized);
+        normals.Add(new Vector3(1, 0, -1).normalized);
 
         uv.Add(new Vector2(0, scale));
         uv.Add(new Vector2(0, 0));
+        uv.Add(new Vector2(0.5f, scale));
+        uv.Add(new Vector2(0.5f, 0));
+        uv.Add(new Vector2(0.5f, scale));
+        uv.Add(new Vector2(0.5f, 0));
         uv.Add(new Vector2(scale, 0));
         uv.Add(new Vector2(scale, scale));
 
         indexes.Add(0);
         indexes.Add(1);
         indexes.Add(2);
+
         indexes.Add(0);
         indexes.Add(2);
         indexes.Add(3);
+
+        indexes.Add(5);
+        indexes.Add(4);
+        indexes.Add(6);
+
+        indexes.Add(5);
+        indexes.Add(6);
+        indexes.Add(7);
 
         mesh.SetVertices(positions);
         mesh.SetNormals(normals);

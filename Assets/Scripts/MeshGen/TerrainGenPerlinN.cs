@@ -20,6 +20,13 @@ public class TerrainGenPerlinN : TerrainGen
     {
         float height = 0.0f;
 
+        foreach (var layer in layers)
+        {
+            if (!layer.enable) continue;
+
+            height += layer.amplitude * Mathf.PerlinNoise(x * layer.frequency.x, y * layer.frequency.y);
+        }
+
         return height;
     }
 

@@ -10,4 +10,9 @@ public class TerrainGenNoise : TerrainGen
     {
         return Random.Range(0.0f, maxHeight);
     }
+
+    private void Update()
+    {
+        UpdateMesh();
+    }
 }

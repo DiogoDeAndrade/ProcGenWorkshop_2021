@@ -73,5 +73,10 @@ public class CylinderGen : BaseMeshGenerator
 
         mesh.RecalculateNormals();
     }
+
+    private void Update()
+    {
+        UpdateMesh();
+    }
 }
 

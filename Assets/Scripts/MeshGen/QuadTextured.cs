@@ -33,4 +33,9 @@ public class QuadTextured : BaseMeshGenerator
         mesh.SetUVs(0, uv);
         mesh.SetIndices(indexes, MeshTopology.Triangles, 0, true);
     }
+
+    private void Update()
+    {
+        UpdateMesh();
+    }
 }

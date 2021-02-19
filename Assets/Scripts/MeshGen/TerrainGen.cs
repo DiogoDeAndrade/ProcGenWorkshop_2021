@@ -10,6 +10,8 @@ public class TerrainGen : BaseMeshGenerator
 
     protected override void FillMesh(Mesh mesh)
     {
+        Random.InitState(0);
+
         List<Vector3>   positions = new List<Vector3>();
         List<Vector2>   uv = new List<Vector2>();
         List<int>       indexes = new List<int>();
